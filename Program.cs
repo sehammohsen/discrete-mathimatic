@@ -1,31 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.SqlTypes;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace prime_number
+namespace perfect_number
 {
-    internal class Program
+    internal class perfect_number 
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("please enter the frist number");
-            double n1 = double.Parse(Console.ReadLine());
-            Console.WriteLine("please enter the second number ");
-            double n2 = double.Parse(Console.ReadLine());
-            for (; n1 < n2; n1++)
+           
+            Console.WriteLine("please enter the smallest number");
+            int smallestnumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("please enter the biggest number");
+            int biggestnumber = int.Parse(Console.ReadLine());
+            for (; smallestnumber<biggestnumber;smallestnumber++)
             {
-                int i = 2;
-               for (; i <= Math .Floor(Math.Sqrt (n1)); i++)
-               {
-                        if (n1%i == 0)
-                        break;
-               } 
-                if (n1 == 2) Console.WriteLine(n1);
-                if (n1 % i != 0)
-                    Console.WriteLine(n1);
+                int sum = 0;
+                for (int i = 1 ;i < smallestnumber;i++)
+                {
+                    if (smallestnumber% i == 0)
+                    {
+                        sum = sum + i;
+                        
+                    }
+                }
+                
+                if (sum == smallestnumber)
+                {
+                  Console.WriteLine("number" + smallestnumber + "is perfect");
+                }
+                // project 2 perfect number 
             }
-        }// project 1 prime number 
+            
+        }
+       
     }
 }
